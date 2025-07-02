@@ -27,16 +27,12 @@ def main():
     prob3 = generate_symbol_prob_scaled3(const3)
     mi_shaped3 = [compute_mi_shaped(3.33, snr, const3, prob3) for snr in snr_list]
 
-    # Shannon容量の計算
-    shannon = shannon_limit_calculation(snr_list)
-
     # 結果のまとめと可視化
     mi_results = [
         (mi_unshaped, 'Unshaped', 'o-.'),
         (mi_shaped1, 'Shaped(β=0.1)', '^-'),
         (mi_shaped2, 'Shaped(β=0.2)', '>-'),
-        (mi_shaped3, 'Shaped(β=0.3)', 'v-'),
-        (shannon, 'Shannon Limit', 'x--')
+        (mi_shaped3, 'Shaped(β=0.3)', 'v-')
     ]
     plot_mi_curves(snr_list, mi_results, [r[1] for r in mi_results])
 
