@@ -18,7 +18,7 @@ def generate_symbol_prob_scaled3(constellation):
     probs = _assign_probs(constellation, 3, 1, 0.3, z)
     return np.array(probs)
 
-# シンボルの位置に応じて corner / edge / center の確率を割り当てる
+# シンボルの位置に応じて確率を割り当てる
 def _assign_probs(constellation, a, b, beta, z):
     corner = np.exp(-beta * 2) / z
     edge = np.exp(-beta * 10) / z
